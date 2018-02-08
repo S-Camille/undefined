@@ -56,7 +56,6 @@ $app->get('/utilisateurs',function(){
 	$cu->afficherListeUtilisateurs();
 });
 
-$app->run();
 
 // CONNEXION
 $app->get('/auth/login', function(){
@@ -85,12 +84,12 @@ $app->get('/AfficheReservation/:id', function($id){
     $arc->afficheReservationController($id);
 })->name('AffResNum');
 
-$app->get('auth/profile', function(){
-	// formulaire edition profil
+$app->get('/auth/profile', function(){
+	(new ControllerUser())->afficherProfil();
 })->name('profile');
 
-$app->post('auth/profile', function(){
-	// formulaire validation edition
+$app->post('/auth/profile', function(){
+	(new ControllerUser())->editerProfil();
 })->name('profile_valid');
 
 
