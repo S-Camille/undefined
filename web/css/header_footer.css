@@ -61,7 +61,6 @@ nav {
 
 #menu .li {
 	display: inline-block;
-	width: 100px;
 	background-color: #F9A660; 
 	text-align: center;
 	margin: 0px;
@@ -94,7 +93,7 @@ footer ul {
 }
 
 #auteur {
-	text-align: right;
+	text-align: center;
 	font-family: Arial;
 	font-weight: bold;
 	font-size: 1em;

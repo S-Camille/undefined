@@ -63,14 +63,7 @@ END;
 		$html=<<<END
 		</div>
 		<footer>
- 			<ul id="auteur">
-				<li>Camille SCHWARZ</li>
-				<li>Luc CHENG</li>
-				<li>Aymerik DIEBOLD</li>
-				<li>Quentin MILLARDET</li>
-				<li>Loïc OBERLÉ</li>
-				<li>Guillaume TOUSSAINT</li>
-			</ul>
+ 			<p id="auteur">© Garage Week Planner - 2018 | Camille SCHWARZ, Luc CHENG, Aymerik DIEBOLD, Quentin MILLARDET, Loïc OBERLÉ, Guillaume TOUSSAINT</p>
 		</footer>
 </body>
 </html>
