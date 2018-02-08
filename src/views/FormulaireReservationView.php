@@ -1,22 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Quentin
- * Date: 08/02/2018
- * Time: 14:29
- */
 
 namespace undefined\views;
 
-
-use Slim\Slim;
+use undefined\views\GlobaleView;
 
 class FormulaireReservationView{
 
     public function __construct(){}
 
     public function render(){
-        $app = Slim::getInstance();
+        $app = \Slim\Slim::getInstance();
         $url = $app->urlFor('ValidationFormulaire');
         $html = <<<END
         <script> function heure(nb, element) { val deb = document.getElementById(element); deb.value = nb;}</script>
@@ -54,8 +47,6 @@ class FormulaireReservationView{
 </form>
 
 END;
-
-
         return GlobaleView::header([]) . $html . GlobaleView::footer();
     }
 

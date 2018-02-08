@@ -7,11 +7,11 @@ use undefined\models\Reservation;
 
 class ValidationFormulaireReservationController{
 
-    public function __construct(){}
+    public function __construct() {}
 
-    public function validation(){
+    public function validation() {
         $app = \Slim\Slim::getInstance();
-        if (isset($_SESSION["user"])){
+        if (isset($_SESSION["user"])) {
             $user = "";
             $res = new Reservation();
             $res->h_debut = $app->request->post('deb');
@@ -26,8 +26,9 @@ class ValidationFormulaireReservationController{
             $res->save();
             $app->redirect($app->urlFor('Accueil'));
         }
-        else{
+        else {
             $app->redirect($app->urlFor("connectError"));
         }
     }
+    
 }

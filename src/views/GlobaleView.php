@@ -46,7 +46,7 @@ END;
 			<div class="li"><a href="$urlInscription">Inscription</a></div>
 END;
 		}
-		$html=$html.<<<END
+		$html = $html.<<<END
 		</div>
 	</nav>
 	</header>

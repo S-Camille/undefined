@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Luc
- * Date: 08/02/2018
- * Time: 11:06
- */
+
 namespace undefined\controllers;
 
 use undefined\views\RegisterView;
@@ -15,7 +10,7 @@ use undefined\models\User;
 class ControllerUser {
 
     public function afficherConnexionForm($msgErr = null) {
-         echo (new ConnexionView())->render($msgErr);
+        echo (new ConnexionView())->render($msgErr);
     }
 
     public function traiterConnexionForm() {
@@ -83,4 +78,5 @@ class ControllerUser {
         $app = \Slim\Slim::getInstance();  
         $app->redirect($app->urlFor('Accueil'));
     }
+
 }

@@ -4,10 +4,11 @@ namespace undefined\views;
 
 use undefined\models\Item;
 use undefined\models\Categorie;
+use undefined\views\GlobaleView;
 
 class ItemView {
 
-	private $item, $app;
+	private $item;
 
  	public function __construct(Item $it) {
  		$this->item = $it;

@@ -1,4 +1,5 @@
 <?php
+
 require 'vendor/autoload.php';
 
 use undefined\controllers\AccueilController;
@@ -109,7 +110,6 @@ $app->get('/auth/logout', function(){
 	$cu = new ControllerUser();
 	$cu->deconnexion();
 })->name('Deco');
-
 
 $app->get('/admin', function(){
    $c = new \undefined\controllers\BackOfficeController();

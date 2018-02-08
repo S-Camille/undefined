@@ -1,4 +1,5 @@
 <?php
+
 namespace undefined\views;
 
 class AfficheReservationView {
@@ -6,21 +7,20 @@ class AfficheReservationView {
     private $res;
 
     public function __construct($res = null) {
-        if ($res == null){
-            $this->res = "Non reservé";
+        if ($res == null) {
+            $this->res = "Non réservé";
         }
-        else{
-            $this->res = "Reservé par " . $res;
+        else {
+            $this->res = "Réservé par " . $res;
         }
     }
 
-    public function render(){
+    public function render() {
         $html = <<<END
         <div>
-            <label>Reservation : {$this->res}</label>
+            <label>Réservation : {$this->res}</label>
         </div>
 END;
-;
         return $html;
     }
 

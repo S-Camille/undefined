@@ -11,7 +11,7 @@ class AccueilController {
 	public function __construct() {}
 
 	public function affichageAcc() {
-		$app=\Slim\Slim::getInstance();
+		$app = \Slim\Slim::getInstance();
 		$head = GlobaleView::header([]);
 		$foot = GlobaleView::footer();
 		$c = Categorie::get();

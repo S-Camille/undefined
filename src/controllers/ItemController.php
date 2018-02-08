@@ -4,7 +4,6 @@ namespace undefined\controllers;
 
 use undefined\views\GlobaleView;
 use undefined\models\Item;
-use undefined\models\Categorie;
 use undefined\views\ItemView;
 
 class ItemController {
