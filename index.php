@@ -24,10 +24,6 @@ $app->get('/', function(){
 $app->get('/categorie/:id', function($id){
     $c = new ControleurItem();
     $c->afficherItemsCategorie($id);
-});
-
-$app->get('/ListeItemsCat', function(){
-	
 })->name('ListeItemsCat');
 
 $app->get('/ListeReserv', function(){
