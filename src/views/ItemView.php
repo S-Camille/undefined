@@ -68,8 +68,8 @@ class ItemView {
             </div></div>
 END;
 		$url = $app->urlFor('ListeReserv');
-        $url2 = $app->urlFor('PlanningGraph',['id'=>$this->item->id]);
-        $url3 = $app->urlFor('FormRes');
+        $url2 = $app->urlFor('PlanningGraph', ['id'=>$this->item->id]);
+        $url3 = $app->urlFor('FormRes', ['id'=>$this->item->id]);
 		$it = $it.<<<END
 		<div id="linkBox"><a href="$url" title="Afficher la liste des réservations de cet item"><div class="lienPub" id="esc">Afficher la liste des réservations de cet item</div></a>
 		<a href="$url2" title="Afficher son planning graphique"><div class="lienPub">Afficher son planning graphique</div></a>
