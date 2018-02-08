@@ -12,7 +12,7 @@ class ProfileView {
 		$it = GlobaleView::header(['css1' => 'formulaire.css', 'css2' => 'item.css']);
                 $app = \Slim\Slim::getInstance();
                 $it = $it . <<<END
-                <form action="{$app->urlFor('Profile_valid')}" method="POST">
+                <form action="{$app->urlFor('Profile_valid')}" method="POST" enctype="multipart/form-data">
                 <label for="username">Pseudo :</label>
                 <input type="text" name="username" value="
 END;
@@ -22,6 +22,9 @@ END;
 
                 <label for="password">Mot de passe <em>(laissez vide pour ne pas changer)</em> :</label>
                 <input type="password" name="password" />
+
+                <label for="avatar">Changer mon avatar ?</label>
+                <input type="file" name="avatar" /><br />
 
                 <input type="submit" value="Modifier" />
                 </form>

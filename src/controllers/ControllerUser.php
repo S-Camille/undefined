@@ -58,10 +58,13 @@ class ControllerUser {
     }
 
     public function editerProfil() {
+        $app = \Slim\Slim::getInstance();
         if (!isset($_SESSION['user'])) {
-            $app = \Slim\Slim::getInstance();
             $app->redirect($app->urlFor('Accueil'));  
         }
+
+        $upload = $this->upload('avatar',$app->request->getRootUri().'/web/img/user/'.unserialize($_SESSION['user'])->id.'.'.explode('.',$_FILES['avatar']['name'])[1]);
+        
         if (isset($_POST['password'])) {
             $user = unserialize($_SESSION['user']);
             $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -77,4 +80,17 @@ class ControllerUser {
         $app->redirect($app->urlFor('Accueil'));
     }
 
+    private function upload($index,$destination,$maxsize=FALSE,$extensions=['png', 'PNG', 'jpg', 'JPG', 'jpeg', 'JPEG', 'gif', 'GIF'])
+    {
+        //Test1: fichier correctement uploadé
+        if (!isset($_FILES[$index]) OR $_FILES[$index]['error'] > 0) return FALSE;
+        //Test2: taille limite
+        if ($maxsize !== FALSE AND $_FILES[$index]['size'] > $maxsize) return FALSE;
+        //Test3: extension
+        $ext = substr(strrchr($_FILES[$index]['name'],'.'),1);
+        if ($extensions !== FALSE AND !in_array($ext,$extensions)) return FALSE;
+        //Déplacement
+        return move_uploaded_file($_FILES[$index]['tmp_name'],$destination);
+    }
+ 
 }
