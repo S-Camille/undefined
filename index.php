@@ -68,4 +68,9 @@ $app->get('/AfficheReservation', function(){
     $arc->afficheReservationController();
 })->name('AffRes');
 
+$app->get('/AfficheReservation/:id', function($id){
+    $arc = new AfficheReservationControllers();
+    $arc->afficheReservationController($id);
+})->name('AffResNum');
+
 $app->run();

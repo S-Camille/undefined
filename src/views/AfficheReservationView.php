@@ -14,8 +14,6 @@ class AfficheReservationView {
         }
     }
 
-
-
     public function render(){
         $html = <<<END
         <div>

@@ -9,11 +9,11 @@ class AfficheReservationControllers {
 
     public function __construct() {}
 
-    public function afficheReservationController(){
-        $head = GlobaleView::header();
+    public function afficheReservationController($res = null){
+        $head = GlobaleView::header([]);
         $foot = GlobaleView::footer();
-        $arv = new AfficheReservationView($res = null);
-        echo $head . $arv->render($res) . $foot;
+        $arv = new AfficheReservationView($res);
+        echo $arv->render($res);
     }
 
 }
