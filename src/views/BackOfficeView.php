@@ -2,15 +2,10 @@
 
 namespace undefined\views;
 
-class BackOfficeView {
-
-<<<<<<< HEAD
 use undefined\models\Reservation;
 
 class BackOfficeView
 {
-=======
->>>>>>> ffed3f36c04ed9082a0c62aef52d2100e4b42dcd
     private $autorise;
     private $reservations;
 

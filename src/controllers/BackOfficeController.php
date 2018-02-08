@@ -2,7 +2,6 @@
 
 namespace undefined\controllers;
 use undefined\models\Reservation;
-
 use undefined\views\BackOfficeView;
 use undefined\models\User;
 
@@ -20,9 +19,11 @@ class BackOfficeController {
     public function afficherPage($niveau) {
         if ($this->estAutorise($niveau)) {
             $v = new BackOfficeView(true);
+            echo $v->render();
         }
         else {
             $v = new BackOfficeView(false);
+            echo $v->render();
         }
         $v->render();
     }

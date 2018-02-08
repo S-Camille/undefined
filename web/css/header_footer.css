@@ -14,9 +14,9 @@ body {
 }
 
 header {
-	background-color: #797979; 
+	background-color: #ff957d; 
 	border-width: 25px; 
-	border-color: #797979; 
+	border-color: #ff957d; 
 	border-style: solid;
 	width: 100%;
 	padding-left: 0;
@@ -61,8 +61,7 @@ nav {
 
 #menu .li {
 	display: inline-block;
-	width: 100px;
-	background-color: #F9A660; 
+	background-color: #7dffe5; 
 	text-align: center;
 	margin: 0px;
 	padding: 10px;
@@ -77,13 +76,10 @@ nav {
 	text-decoration: none;
 }
 
-#menu div:active {
-	background-color: #FBFB5B;
-}
 
 footer {
-	background-color: #797979; 
-	border: 3px #797979 solid;
+	background-color: #ff957d; 
+	border: 3px #ff957d solid;
 	width: 100%;
 }
 
@@ -94,7 +90,7 @@ footer ul {
 }
 
 #auteur {
-	text-align: right;
+	text-align: center;
 	font-family: Arial;
 	font-weight: bold;
 	font-size: 1em;

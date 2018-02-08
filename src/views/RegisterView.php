@@ -17,7 +17,11 @@ class RegisterView {
                 <input type="text" name="username" /><br />
 
                 <label for="password">Mot de passe :</label>
-                <input type="password" name="password" />
+                <input type="password" name="password" /><br />
+
+
+                <label for="password">Confirmez le mdp :</label>
+                <input type="password" name="password_confirm" /><br />
 
                 <input type="submit" value="Inscription" />
                 </form>

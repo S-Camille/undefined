@@ -2,7 +2,6 @@
 
 namespace undefined\views;
 
-
 class VuePlanning {
 
 	private $cont;
@@ -11,14 +10,8 @@ class VuePlanning {
  		$this->cont = $c;
 	}
 
-  public function render(){
-    echo $this->cont;
-  }
+  	public function render() {
+    	echo $this->cont;
+  	}
 
 }
-
-
-
-
-
- ?>
