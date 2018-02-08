@@ -15,6 +15,7 @@ class GlobaleView {
 		$urlDeconnexion = $app->urlFor('Deco');
 		$urlUti = $app->urlFor('Uti');
 		$urlRes =$app->urlFor('affichageReservations');
+		$urlAdmin = $app->urlFor('AffichagePasgeAdmin');
 		$html = <<<END
 <!DOCTYPE html>
 <html>
@@ -40,8 +41,15 @@ END;
 		<div id="menu">
 END;
 		if (isset($_SESSION['user'])) { //<a href="$urlRes">Liste Réservations</a>
+            $admin = unserialize($_SESSION['user'])->niveau;
+            if($admin < 12){
+                $html = $html . '<div class="li"><a href="'.$urlRes.'">Liste Réservations</a></div>';
+            }
+            else{
+                $html = $html . '<div class="li"><a href="'.$urlAdmin.'">Réservations Admins</a></div>';
+            }
 			$html = $html.<<<END
-			<div class="li"><a href="$urlRes">Liste Réservations</a></div><div class="li"><a href="$urlUti">Liste Utilisateurs</a></div><div id="menucenter" class="li"><a href="$urlProf">Mon profil</a></div><div class="li"><a href="$urlDeconnexion">Déconnexion</a></div>
+			<div class="li"><a href="$urlUti">Liste Utilisateurs</a></div><div id="menucenter" class="li"><a href="$urlProf">Mon profil</a></div><div class="li"><a href="$urlDeconnexion">Déconnexion</a></div>
 END;
 		}
 		else {
