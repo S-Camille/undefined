@@ -4,6 +4,8 @@ require 'vendor/autoload.php';
 use undefined\controllers\AccueilController;
 use undefined\controllers\ItemController;
 use undefined\controllers\ControleurItem;
+use undefined\controllers\AfficheReservationControllers;
+
 session_start();
 
 $db = new Illuminate\Database\Capsule\Manager();
@@ -60,5 +62,10 @@ $app->get('/auth/register', function(){
 $app->post('/auth/register', function(){
 	// formulaire inscription traitement
 })->name('register_valid');
+
+$app->get('/AfficheReservation', function(){
+    $arc = new AfficheReservationControllers();
+    $arc->afficheReservationController();
+})->name('AffRes');
 
 $app->run();
