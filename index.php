@@ -12,6 +12,7 @@ use undefined\controllers\ControleurUtilisateur;
 use undefined\controllers\AfficheReservationControllers;
 use undefined\controllers\ControllerUser;
 use undefined\controllers\ValidationFormulaireReservationController;
+use undefined\controllers\AffDetResController;
 
 session_start();
 
@@ -31,10 +32,6 @@ $app->get('/categorie/:id', function($id){
 	$c = new ControleurItem();
     $c->afficherItemsCategorie($id);
 })->name('ListeItemsCat');
-
-$app->get('/ListeReserv', function(){
-
-})->name('ListeReserv');
 
 $app->get('/PlanningGraph/:id', function($id){
 	$c=new ControleurPlanning();
