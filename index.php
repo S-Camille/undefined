@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 use undefined\controllers\AccueilController;
 use undefined\controllers\ItemController;
 use undefined\controllers\ControleurItem;
+use undefined\controllers\ControleurUtilisateur;
 session_start();
 
 $db = new Illuminate\Database\Capsule\Manager();
@@ -27,24 +28,29 @@ $app->get('/categorie/:id', function($id){
 });
 
 $app->get('/ListeItemsCat', function(){
-	
+
 })->name('ListeItemsCat');
 
 $app->get('/ListeReserv', function(){
-	
+
 })->name('ListeReserv');
 
 $app->get('/PlanningGraph', function(){
-	
+
 })->name('PlanningGraph');
 
 $app->get('/FormRes', function(){
-	
+
 })->name('FormRes');
 
 $app->get('/Item', function() {
 	$ic = new ItemController($_GET["id"]);
 	$ic->affichageItem();
 })->name('Item');
+
+$app->get('/utilisateurs',function(){
+	$cu=new ControleurUtilisateur();
+	$cu->afficherListeUtilisateurs();
+});
 
 $app->run();
