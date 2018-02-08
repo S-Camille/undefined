@@ -11,7 +11,7 @@ class BackOfficeController {
     private $user;
     const RESERVE = 1;
     const ADMIN = 12;
-    const ANNULEE = 0;
+    const ANNULEE = 2;
 
     public function __construct() {
         $user = unserialize($_SESSION['user']);
@@ -47,14 +47,20 @@ class BackOfficeController {
         $app->redirect($app->urlFor('AffichagePasgeAdmin'));
     }
 
-    public function annulerReservation($id_res){
+    public function annulerReservation($id_res, $util = 0){
         $app = \Slim\Slim::getInstance();
         $res = Reservation::where('id_res', '=', $id_res)->first();
-        if ($this->estAutorise(BackOfficeController::ADMIN)) {
+        $niv = unserialize($_SESSION['user'])->id;
+        if ($this->estAutorise(BackOfficeController::ADMIN) || $niv == $res->id_util) {
             $res->etat = BackOfficeController::ANNULEE;
             $res->save();
         }
-        $app->redirect($app->urlFor('AffichagePasgeAdmin'));
+        if ($util == 0) {
+            $app->redirect($app->urlFor('AffichagePasgeAdmin'));
+        }
+        else{
+            $app->redirect($app->urlFor('affichageReservations'));
+        }
     }
 
 }

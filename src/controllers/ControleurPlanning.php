@@ -63,7 +63,7 @@ class ControleurPlanning {
 
     }
     $vP=new VuePlanning($this->affichagePlanning($tab));
-    $vP->render();
+      echo GlobaleView::header([]).$vP->render().GlobaleView::footer();
 
   }
 

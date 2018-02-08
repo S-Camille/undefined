@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 
 use undefined\controllers\AccueilController;
 use undefined\controllers\BackOfficeController;
+use undefined\controllers\EnsembleReservationController;
 use undefined\controllers\FormulaireReservationController;
 use undefined\controllers\ItemController;
 use undefined\controllers\ControleurItem;
@@ -12,6 +13,7 @@ use undefined\controllers\ControleurUtilisateur;
 use undefined\controllers\AfficheReservationControllers;
 use undefined\controllers\ControllerUser;
 use undefined\controllers\ValidationFormulaireReservationController;
+use undefined\controllers\AffDetResController;
 
 session_start();
 
@@ -31,10 +33,6 @@ $app->get('/categorie/:id', function($id){
 	$c = new ControleurItem();
     $c->afficherItemsCategorie($id);
 })->name('ListeItemsCat');
-
-$app->get('/ListeReserv', function(){
-
-})->name('ListeReserv');
 
 $app->get('/PlanningGraph/:id', function($id){
 	$c=new ControleurPlanning();
@@ -140,5 +138,15 @@ $app->get('/annulerRes/:id', function($id){
     $c = new BackOfficeController();
     $c->annulerReservation($id);
 })->name('AnnuleeReservation');
+
+$app->get('/afficherReservations', function(){
+    $er = new EnsembleReservationController();
+    $er->affichage();
+})->name('affichageReservations');
+
+$app->get('/annulerResInd/:id', function($id){
+    $c = new BackOfficeController();
+    $c->annulerReservation($id, 1);
+})->name('AnnuleeReservationInd');
 
 $app->run();

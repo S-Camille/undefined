@@ -11,7 +11,7 @@ class VuePlanning {
 	}
 
   	public function render() {
-    	echo $this->cont;
+    	return $this->cont;
   	}
 
 }
