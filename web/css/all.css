@@ -16,10 +16,12 @@
 .cat_nom {
     font-weight: bold;
 	margin-bottom: 10%;
+    color: white;
 }
 
 .cat_desc {
     font-weight: bold;
+    color: white;
 }
 
 a:link, a:visited {
