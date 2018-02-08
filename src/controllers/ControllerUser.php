@@ -29,7 +29,7 @@ class ControllerUser {
                 $app->redirect($app->urlFor('Accueil'));  
             }
         }        
-        $app->redirect($app->urlFor('connect'));
+        $app->redirect($app->urlFor('Connect'));
     }
 
     public function afficherInscriptionForm(){
@@ -44,9 +44,9 @@ class ControllerUser {
             $user->nom = htmlspecialchars($_POST['username']);
             $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $user->save();
-            $app->redirect($app->urlFor('connect'));
+            $app->redirect($app->urlFor('Connect'));
         } else {
-            $app->redirect($app->urlFor('register'));
+            $app->redirect($app->urlFor('Register'));
         }
     }
 
