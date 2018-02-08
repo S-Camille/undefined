@@ -44,7 +44,7 @@ class FormulaireReservationView{
     <label>16h</label>
     
     <label><br/> Jour de Fin : </label>
-	<select id="jourFin" name="jourFin">
+	<select id="JourFin" name="JourFin">
         <option value="1" selected>Lundi</option> 
         <option value="2" >Mardi</option>
         <option value="3">Mercredi</option>

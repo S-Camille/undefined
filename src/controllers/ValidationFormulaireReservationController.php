@@ -26,7 +26,7 @@ class ValidationFormulaireReservationController{
                 $debRes = $res->j_debut * 100 + $res->h_debut;
                 $finBla = $blabla->j_fin * 100 + $blabla->h_fin;
                 $finRes = $res->j_fin * 100 + $res->h_fin;
-                if(($debBla >= $debRes && $finRes <= $finRes) || ($finRes < $debBla) || ($debRes < $finBla)){
+                if((($debBla >= $debRes && $finRes <= $finRes) || ($finRes < $debBla) || ($debRes < $finBla)) && $res->etat != 0){
                     $valide = 0;
                 }
             }
