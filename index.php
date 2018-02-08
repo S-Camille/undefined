@@ -40,6 +40,11 @@ $app->get('/PlanningGraph/:id', function($id){
 	$c->afficherPlanning($id);
 })->name('PlanningGraph');
 
+$app->get('/PlanningGraphUser/:id', function($id){
+	$c=new ControleurPlanning();
+	$c->afficherPlanningUtilisateur($id);
+})->name('PlanningGraphUser');
+
 $app->get('/FormRes/:id', function($id){
 	$afc = new FormulaireReservationController($id);
     $afc->affichageFormulaire();

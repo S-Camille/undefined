@@ -36,6 +36,26 @@ class ControleurPlanning{
       $vP->render();
   }
 
+  function afficherPlanningUtilisateur($id){
+    $tab=$this->initialiserPlanning();
+    $reservations=Reservation::where('id_utili',"=",$id)->get();
+    foreach ($reservations as $key => $value) {
+      if($value->j_debut<$value->j_fin){
+        for ($j=0; $j < $value->j_fin-1 ; $j++) {
+          for ($i=0; $i < 11; $i++) {
+            $tab=$this->reserverHoraire($j,$i,$tab);
+          }
+        }
+      }
+      for ($l=0; $l < $value->h_fin-8; $l++) {
+        $tab=$this->reserverHoraire($value->j_fin-1,$l,$tab);
+      }
+    }
+    $vP=new VuePlanning($this->affichagePlanning($tab));
+    $vP->render();
+
+  }
+
 
   function initialiserPlanning(){
     $reserve=array();
