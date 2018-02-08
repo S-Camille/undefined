@@ -4,6 +4,12 @@ form {
     background-color: #7dffe5;
     padding: 10px;
     margin: auto;
+    padding: 4px 4px 4px 4px;
+    border-radius: 5px;
+    background: linear-gradient(#cccccc, #7dffe5);
+    font: bold 13px Arial;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
 }
 
 form label {

@@ -7,8 +7,6 @@
 }
 
 .liste {
-    /*border: #FF4900 solid;
-    display: block;*/
     margin: 0.2em auto;
     width: 30%;
     font-family: arial;
@@ -16,9 +14,8 @@
 }
 
 .cat_nom {
-    /*border-bottom: 3px #FF4900 solid;*/
     font-weight: bold;
-		margin-bottom: 10%;
+	margin-bottom: 10%;
 }
 
 .cat_desc {
@@ -53,7 +50,13 @@ h2 {
 	margin: 10%;
 	border-radius: 10%;
 	border: none;
-	background-color: #F9A660;
+	background-color: #7dffe5;
+    padding: 4px 4px 4px 4px;
+    border-radius: 5px;
+    background: linear-gradient(#cccccc, #7dffe5);
+    font: bold 13px Arial;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
 }
 
 body{

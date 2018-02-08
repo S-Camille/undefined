@@ -11,6 +11,7 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	overflow-x: hidden;
+	background-color: #fffcc5;
 }
 
 header {
@@ -43,6 +44,7 @@ nav {
 
 #titre a {
 	color: white;
+	font-size : 1.2em;
 	text-decoration: none;
 }
 
@@ -68,8 +70,17 @@ nav {
 	border-radius: 15px;
 	font-size: 1em;
 	margin-right: 100px;
+	padding: 4px 4px 4px 4px;
+    border-radius: 5px;
+    background: linear-gradient(#cccccc, #7dffe5);
+    font: bold 13px Arial;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
 }
 
+#menu .li a {
+	color: white;
+}
 #menu a {
 	width: 100%;
 	display: block;

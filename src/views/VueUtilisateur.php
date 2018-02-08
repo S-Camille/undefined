@@ -30,7 +30,7 @@ class VueUtilisateur {
     foreach ($tab as $key => $value) {
       $url=$app->urlFor("PlanningGraphUser",['id'=>$key]);
       $img = $app->request()->getRootUri().'/web/img/user/'.$key.'.jpg';
-      echo "Nom: ".$value."<img src=$img></img>"."<a href='$url'>Acceder au planning</a><br/>";
+      echo "Nom: ".$value."<img src=$img></img>"."<a href='$url'>Accéder au planning</a><br/>";
     }
   }
 
