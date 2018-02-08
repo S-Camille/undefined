@@ -1,11 +1,8 @@
 <?php
 
 namespace undefined\controllers;
-<<<<<<< HEAD
 use undefined\models\Reservation;
-=======
 
->>>>>>> ffed3f36c04ed9082a0c62aef52d2100e4b42dcd
 use undefined\views\BackOfficeView;
 use undefined\models\User;
 
@@ -34,7 +31,6 @@ class BackOfficeController {
         $niveau = unserialize($_SESSION['user'])->niveau;
         return $niveau >= $niveau_demande;
     }
-<<<<<<< HEAD
 
     public function confirmerReservation($id_res){
         $res = Reservation::where('id_res', '=', $id_res)->first();
@@ -45,7 +41,5 @@ class BackOfficeController {
         $v = new BackOfficeView(true);
         $v->render();
     }
-=======
-    
->>>>>>> ffed3f36c04ed9082a0c62aef52d2100e4b42dcd
+
 }
