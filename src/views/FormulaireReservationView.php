@@ -61,7 +61,7 @@ class FormulaireReservationView{
     <label>16h</label>
     <input type="radio" name="Fin" value="18" onClick="heure(18,'heureFin')"/>
     <label>18h</label>
-	<button type="submit" name="Ajout_item" value="ajout_item">Valider Reservation</button>
+	<button type="submit" name="Ajout_item" value="ajout_item" style="margin: auto;display: block;">Valider Reservation</button>
 </form>
 
 END;

@@ -82,7 +82,7 @@ class ControleurPlanning {
 
   function reserverHoraire($j,$h,$tab) {
     $reserve = $tab;
-    $reserve[$j][$h] = "Reserve";
+    $reserve[$j][$h] = "Réservé";
     return $reserve;
 
   }
@@ -103,7 +103,7 @@ class ControleurPlanning {
 
       foreach ($jours as $key => $value) {
 
-          $res .= "<td>".$reserve[$key][$k]."</td>";
+        $res .= "<td class=\"".(($reserve[$key][$k] == 'Vacant') ? 'dispo' : 'indispo')."\">".$reserve[$key][$k]."</td>";
       }
 
     $res .= "</tr>";
