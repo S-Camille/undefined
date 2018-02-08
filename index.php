@@ -43,4 +43,22 @@ $app->get('/Item', function() {
 	$ic->affichageItem();
 })->name('Item');
 
+
+// CONNEXION
+$app->get('/auth/login', function(){
+	// formulaire connexion
+})->name('connect');
+
+$app->post('/auth/login', function(){
+	// formulaire connexion traitement
+})->name('connect_valid');
+
+$app->get('/auth/register', function(){
+	// formulaire inscription
+})->name('register');
+
+$app->post('/auth/register', function(){
+	// formulaire inscription traitement
+})->name('register_valid');
+
 $app->run();
