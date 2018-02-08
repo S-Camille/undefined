@@ -4,6 +4,9 @@
         "illuminate/database": "5.4.*",
         "php": ">=5.6",
         "slim/slim": "2.*"
+    },
+    "autoload": {
+    	"src/":"undefined"
     }
     
 }
