@@ -26,6 +26,7 @@ header {
 	font-weight: bold;
 	font-family: Arial;
 	display: flex;
+	align-items: center;
 }
 
 nav {
@@ -59,12 +60,13 @@ nav {
 }
 
 #menu .li {
-	display:inline-block;
+	display: inline-block;
 	width: 100px;
-	background-color: #C6EDFF; 
+	background-color: #F9A660; 
 	text-align: center;
 	margin: 0px;
-	padding: 0px;
+	padding: 10px;
+	border-radius: 15px;
 	font-size: 1em;
 	margin-right: 100px;
 }
@@ -72,10 +74,9 @@ nav {
 #menu a {
 	width: 100%;
 	display: block;
+	text-decoration: none;
 }
-#menu div:hover {
-	background-color: yellow;
-}
+
 #menu div:active {
 	background-color: #FBFB5B;
 }
