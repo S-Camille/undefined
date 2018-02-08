@@ -7,7 +7,7 @@
 }
 
 .liste {
-    border: #ff00d5 solid;
+    border: #FF4900 solid;
     display: block;
     margin: 0.2em auto;
     width: 30%;
@@ -16,7 +16,7 @@
 }
 
 .cat_nom {
-    border-bottom: 3px #ff00d5 solid;
+    border-bottom: 3px #FF4900 solid;
     font-weight: bold;
 }
 
@@ -28,4 +28,19 @@ a:link, a:visited {
 	font-family: Arial;
 	font-weight: bold;
 	color: black;
+}
+
+#affListeItem {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 30%;
+    margin: 1.5%;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
 }

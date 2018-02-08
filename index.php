@@ -20,19 +20,13 @@ $db->bootEloquent();
 $app = new Slim\Slim();
 
 $app->get('/', function(){
-	echo "Hello world";
 	$acc = new AccueilController();
 	$acc->affichageAcc();
 })->name('Accueil');
 
-
 $app->get('/categorie/:id', function($id){
-    $c = new ControleurItem();
+	$c = new ControleurItem();
     $c->afficherItemsCategorie($id);
-});
-
-$app->get('/ListeItemsCat', function(){
-
 })->name('ListeItemsCat');
 
 $app->get('/ListeReserv', function(){
@@ -47,15 +41,16 @@ $app->get('/FormRes', function(){
 
 })->name('FormRes');
 
-$app->get('/Item', function() {
-	$ic = new ItemController($_GET["id"]);
+$app->get('/Item/:id', function($id){
+	$ic = new ItemController($id);
 	$ic->affichageItem();
 })->name('Item');
 
 $app->get('/utilisateurs',function(){
-	$cu=new ControleurUtilisateur();
+	$cu = new ControleurUtilisateur();
 	$cu->afficherListeUtilisateurs();
-});
+})})->name('Uti');
+
 $app->get('/AffForm',function(){
     $afc = new FormulaireReservationController();
     $afc->affichageFormulaire();
@@ -66,23 +61,25 @@ $app->post('/ValRes', function (){
     $vf->validation();
 })->name('ValidationFormulaire');
 
-
-// CONNEXION
 $app->get('/auth/login', function(){
-	(new ControllerUser())->afficherConnexionForm();
-})->name('connect');
+	$cu = new ControllerUser();
+	$cu->afficherConnexionForm();
+})->name('Connect');
 
 $app->post('/auth/login', function(){
-	(new ControllerUser())->traiterConnexionForm();
-})->name('connect_valid');
+	$cu = new ControllerUser();
+	$cu->traiterConnexionForm();
+})->name('Connect_valid');
 
 $app->get('/auth/register', function(){
-	(new ControllerUser())->afficherInscriptionForm();
-})->name('register');
+	$cu = new ControllerUser();
+	$cu->afficherInscriptionForm();
+})->name('Register');
 
 $app->post('/auth/register', function(){
-	(new ControllerUser())->traiterInscriptionForm();
-})->name('register_valid');
+	$cu = new ControllerUser();
+	$cu->traiterInscriptionForm();
+})->name('Register_valid');
 
 $app->get('/AfficheReservation', function(){
     $arc = new AfficheReservationControllers();
@@ -94,18 +91,20 @@ $app->get('/AfficheReservation/:id', function($id){
     $arc->afficheReservationController($id);
 })->name('AffResNum');
 
-$app->get('/auth/profile', function(){
-	(new ControllerUser())->afficherProfil();
-})->name('profile');
+$app->get('auth/profile', function(){
+	// formulaire edition profil
+})->name('Profile');
 
-$app->post('/auth/profile', function(){
-	(new ControllerUser())->editerProfil();
-})->name('profile_valid');
+$app->post('auth/profile', function(){
+	// formulaire validation edition
+})->name('Profile_valid');
 
 
 $app->get('/auth/logout', function(){
-		(new ControllerUser())->deconnexion();
-});
+	$cu = new ControllerUser();
+	$cu->deconnexion();
+})->name('Deco');
+
 
 $app->get('/admin', function(){
    $c = new \undefined\controllers\BackOfficeController();

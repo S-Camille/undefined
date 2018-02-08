@@ -16,8 +16,8 @@ class CategorieView {
  		$html = '<div class="ensembleListes">';
  		$app = \Slim\Slim::getInstance();
  		foreach ($this->cat as $c) {
- 			$urlListeItemsCat = $app->urlFor('ListeItemsCat', []);
- 			$html = $html.'<a href = "$urlListeItemsCat" class="liste"><div >';
+ 			$urlListeItemsCat = $app->urlFor('ListeItemsCat', ['id' => $c->id]);
+ 			$html = $html.'<a href = "'.$urlListeItemsCat.'" class="liste"><div >';
 			$html = $html.'<div class="cat_nom">'.$c->nom."</div><div class=\"cat_desc\">".$c->description."</div>";
 			$html = $html.'</div></a>';
  		}
