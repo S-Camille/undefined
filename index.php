@@ -56,7 +56,6 @@ $app->get('/utilisateurs',function(){
 	$cu->afficherListeUtilisateurs();
 });
 
-$app->run();
 
 // CONNEXION
 $app->get('/auth/login', function(){
@@ -97,4 +96,10 @@ $app->post('auth/profile', function(){
 $app->get('/auth/logout', function(){
 		(new ControllerUser())->deconnexion();
 });
+
+$app->get('/admin', function(){
+   $c = new \undefined\controllers\BackOfficeController();
+   $c->afficherPage();
+});
+
 $app->run();
