@@ -3,4 +3,6 @@
 .project
 .setting
 src/conf/conf.ini
+vendor
+composer.lock
 
