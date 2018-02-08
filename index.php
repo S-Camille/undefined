@@ -34,8 +34,9 @@ $app->get('/ListeReserv', function(){
 
 })->name('ListeReserv');
 
-$app->get('/PlanningGraph', function(){
-
+$app->get('/PlanningGraph/:id', function($id){
+	$c=new ControleurPlanning();
+	$c->afficherPlanning($id);
 })->name('PlanningGraph');
 
 $app->get('/FormRes', function(){
