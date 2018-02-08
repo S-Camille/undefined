@@ -51,7 +51,7 @@ class BackOfficeController {
         $app = \Slim\Slim::getInstance();
         $res = Reservation::where('id_res', '=', $id_res)->first();
         $niv = unserialize($_SESSION['user'])->id;
-        if ($this->estAutorise(BackOfficeController::ADMIN) || $niv == $res->id_util) {
+        if ($this->estAutorise(BackOfficeController::ADMIN) || $niv == $res->id_utili) {
             $res->etat = BackOfficeController::ANNULEE;
             $res->save();
         }
