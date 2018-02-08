@@ -4,8 +4,10 @@
 DROP TABLE IF EXISTS RESERVATION;
 CREATE TABLE RESERVATION (
   id_res int(11) AUTO_INCREMENT NOT NULL,
-  debut DATE,
-  fin DATE,
+  h_debut int(2),
+  j_debut int(2),
+  h_fin int(2),
+  j_fin int(2),
   id_utili int(11),
   etat BOOLEAN,
   creation DATE,

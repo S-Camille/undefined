@@ -15,5 +15,4 @@ class AfficheReservationControllers {
         $arv = new AfficheReservationView($res);
         echo $arv->render($res);
     }
-
 }
