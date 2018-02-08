@@ -1,0 +1,260 @@
+html {
+
+	height: 100%;
+	width: 99.6%;
+}
+
+body {
+	min-height: 100%;
+	width: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow-x: hidden;
+}
+
+header {
+	background-color: #033BC5; 
+	border-width: 3px; 
+	border-color: #033BC5; 
+	border-style: solid;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	margin: auto;
+}
+
+header img {
+	width: 100%;
+}
+
+
+nav {
+	background-color: #C6EDFF; 
+	border-width: 3px;
+	border-top-width: 0;
+	border-color: #3175FD; 
+	border-style: solid;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	margin: auto;
+	margin-bottom: 10px;
+	border-bottom-left-radius: 0%;
+	border-bottom-right-radius: 0%;
+	font-size : 1em;
+}
+
+#menu {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+#menu .li {
+	display:inline-block;
+	width: 33.15%;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	font-size: 1em;
+}
+
+#menu a {
+	width: 100%;
+	display: block;
+}
+#menu div:hover {
+	background-color: yellow;
+}
+#menu div:active {
+	background-color: #FBFB5B;
+}
+
+#menucenter {
+	border-right: 3px #3175FD solid;
+	border-left: 3px #3175FD solid;
+}
+
+a:link, a:visited {
+	font-family: Arial;
+	font-weight: bold;
+	color: black;
+}
+
+footer {
+	background-color: #033BC5; 
+	border: 3px #033BC5 solid;
+	width: 100%;
+}
+
+footer ul {
+	list-style-type: none;
+	text-align: right;
+	margin: 0;
+}
+
+
+.liste_no {
+    display: none
+}
+
+.liste {
+    border: #ff00d5 solid;
+    display: block;
+    margin: 0.2em auto;
+    width: 30%;
+    font-family: arial;
+    text-align: center;
+}
+
+.liste_titre {
+    border-bottom: #ff00d5 solid;
+    font-weight: bold;
+}
+
+.ensemblesListes {
+	display: flex;
+	justify-content: center;
+    text-align: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.meslistes {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	border: 3px #033BC5 solid;
+	flex-wrap: nowrap;
+	margin-bottom: 1em;
+}
+
+.meslistes #titres {
+	font-weight: bold;
+	color: white;
+}
+
+.meslistes #descrs {
+	color: white;
+}
+
+.meslistes #modif a, .meslistes #afficher a, .meslistes #suppr a, .meslistes #consulteRes a, .meslistes #public{
+	color: white;
+	text-decoration: underline;
+	font-weight: normal;
+	font-family: serif;
+}
+
+.meslistes #suppr {
+	flex: 1;
+}
+
+.meslistes #public{
+    text-decoration: none;
+}
+
+
+#boutonAdd {
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+
+.meslistes .pair {
+	background-color: #16039A;
+	padding-right: 1em;
+}
+
+.meslistes .impair {
+	background-color: #3E99CD;
+	padding-right: 1em;
+}
+
+#auteur {
+	text-align: right;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 1em;
+	margin: 1%;
+	color: #FFFFFF;
+}
+
+#supprListe {
+	text-align: center;
+	font-family: Arial;
+	font-size: 1em;
+	margin: 1%;
+}
+
+#reponseSupprListe {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#ajoutMessListe {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	margin-left: 0.5em;
+	text-align: center;
+}
+
+#ajoutMessListe label {
+	font-weight: bold;
+	font-size: large;
+}
+
+.com {
+	margin: 0.5em;
+	border: 3px #FF00D5 solid;
+	width: 50%;
+	border-radius: 10px;
+}
+
+.com .auteur {
+	border-bottom: 3px #FF00D5 solid;
+	font-weight: bold;
+	padding-left: 0.5em;
+}
+
+.com .message {
+	padding-left: 0.5em;
+}
+
+.lienPub {
+    display: flex;
+	justify-content: center;
+	color: #033BC5;
+	margin-bottom: 0.5%;
+	margin-top: 0.5%;
+}
+
+#esc {
+	margin-top: 2%;
+}
+
+#user {
+    padding-left: 5%;
+}
+
+#user #pseudo {
+	font-weight: bold;
+	font-size: 25px;
+	text-decoration: underline;
+	margin-bottom: 5px;
+    color:aqua;
+}
+
+.utilisateur {
+	font-weight: bold;
+	font-size: 1em;
+	text-decoration: underline;
+	margin-left: 2%;
+	margin-bottom: 5px;
+}
