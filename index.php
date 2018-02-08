@@ -49,7 +49,7 @@ $app->get('/Item/:id', function($id){
 $app->get('/utilisateurs',function(){
 	$cu = new ControleurUtilisateur();
 	$cu->afficherListeUtilisateurs();
-})})->name('Uti');
+})->name('Uti');
 
 $app->get('/AffForm',function(){
     $afc = new FormulaireReservationController();
