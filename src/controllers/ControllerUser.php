@@ -26,9 +26,7 @@ class ControllerUser {
     }
 
     public function afficherInscriptionForm($msgErr = null) {
-        if ($msgErr != null) {
-            echo (new RegisterView())->render();
-        }
+        echo (new RegisterView())->render();
     }
 
     public function traiterInscriptionForm() {

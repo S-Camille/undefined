@@ -6,11 +6,15 @@ use undefined\views\FormulaireReservationView;
 
 class FormulaireReservationController {
 
-    public function __construct(){}
+    private $id;
 
-    public function affichageFormulaire() {
-        if (isset($_SESSION["user"])) {
-            $frv = new FormulaireReservationView();
+    public function __construct($id){
+        $this->id = $id;
+    }
+
+    public function affichageFormulaire(){
+        if (isset($_SESSION["user"])){
+            $frv = new FormulaireReservationView($this->id);
             echo $frv->render();
         }
         else {

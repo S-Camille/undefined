@@ -55,6 +55,11 @@ $app->get('/utilisateurs',function(){
 	$cu->afficherListeUtilisateurs();
 })->name('Uti');
 
+$app->get('/AffForm/:id',function($id){
+    $afc = new FormulaireReservationController($id);
+    $afc->affichageFormulaire();
+})->name('AffichageFormulaire');
+
 $app->post('/ValRes', function (){
     $vf = new ValidationFormulaireReservationController();
     $vf->validation();

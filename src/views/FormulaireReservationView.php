@@ -6,7 +6,11 @@ use undefined\views\GlobaleView;
 
 class FormulaireReservationView{
 
-    public function __construct(){}
+    private $id;
+
+    public function __construct($id){
+        $this->id = $id;
+    }
 
     public function render(){
         $app = \Slim\Slim::getInstance();
@@ -17,6 +21,7 @@ class FormulaireReservationView{
 	<label>Formulaire Res</label>
 	<input type="hidden" name="heureDeb" id="heureDeb" value="8"/>
 	<input type="hidden" name="heureFin" id="heureFin" value="10"/>
+	<input type="hidden" name="id_item" id="id_item" value="{$this->id}">
 	<select id="jourDeb" name="jourDeb">
         <option value="1" selected>Lundi</option> 
         <option value="2" >Mardi</option>
