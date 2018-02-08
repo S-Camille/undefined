@@ -2,6 +2,7 @@
 require 'vendor/autoload.php';
 
 use undefined\controllers\AccueilController;
+use undefined\controllers\ItemController;
 
 session_start();
 
@@ -19,11 +20,32 @@ $app->get('/', function(){
 	$acc->affichageAcc();
 })->name('Accueil');
 
+
 $app->get('/categorie/:id', function($id){
     //$c = new \undefined\controller\ControleurItem();
     //$c->afficherItemsCategorie($id);
     echo "toto";
 });
 
+$app->get('/ListeItemsCat', function(){
+	
+})->name('ListeItemsCat');
+
+$app->get('/ListeReserv', function(){
+	
+})->name('ListeReserv');
+
+$app->get('/PlanningGraph', function(){
+	
+})->name('PlanningGraph');
+
+$app->get('/FormRes', function(){
+	
+})->name('FormRes');
+
+$app->get('/Item', function() {
+	$ic = new ItemController($_GET["id"]);
+	$ic->affichageItem();
+})->name('Item');
 
 $app->run();

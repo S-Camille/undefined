@@ -1,0 +1,38 @@
+td {
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table tr td:first-child {
+    text-align: center;
+}
+
+table tr td:last-child {
+    text-align: right;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+
+.item {
+	width: 33%;
+	text-align: center;
+}
+
+
+#affItem {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+#affItem > div {
+    width: 40%;
+}

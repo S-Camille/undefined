@@ -1,0 +1,31 @@
+.ensembleListes {
+	display: flex;
+	justify-content: center;
+    text-align: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.liste {
+    border: #ff00d5 solid;
+    display: block;
+    margin: 0.2em auto;
+    width: 30%;
+    font-family: arial;
+    text-align: center;
+}
+
+.cat_nom {
+    border-bottom: 3px #ff00d5 solid;
+    font-weight: bold;
+}
+
+.cat_desc {
+    font-weight: bold;
+}
+
+a:link, a:visited {
+	font-family: Arial;
+	font-weight: bold;
+	color: black;
+}

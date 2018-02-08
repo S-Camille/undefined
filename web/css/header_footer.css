@@ -80,12 +80,6 @@ nav {
 	border-left: 3px #3175FD solid;
 }
 
-a:link, a:visited {
-	font-family: Arial;
-	font-weight: bold;
-	color: black;
-}
-
 footer {
 	background-color: #033BC5; 
 	border: 3px #033BC5 solid;
@@ -96,42 +90,6 @@ footer ul {
 	list-style-type: none;
 	text-align: right;
 	margin: 0;
-}
-
-
-.liste_no {
-    display: none
-}
-
-.liste {
-    border: #ff00d5 solid;
-    display: block;
-    margin: 0.2em auto;
-    width: 30%;
-    font-family: arial;
-    text-align: center;
-}
-
-.liste_titre {
-    border-bottom: #ff00d5 solid;
-    font-weight: bold;
-}
-
-.ensemblesListes {
-	display: flex;
-	justify-content: center;
-    text-align: center;
-	flex-direction: row;
-	flex-wrap: nowrap;
-}
-
-.meslistes {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	border: 3px #033BC5 solid;
-	flex-wrap: nowrap;
-	margin-bottom: 1em;
 }
 
 .meslistes #titres {

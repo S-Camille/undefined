@@ -3,6 +3,7 @@
 namespace undefined\controllers;
 
 use undefined\models\Categorie;
+use undefined\views\CategorieView;
 use undefined\views\GlobaleView;
 
 class AccueilController {
@@ -13,7 +14,9 @@ class AccueilController {
 		$app=\Slim\Slim::getInstance();
 		$head = GlobaleView::header([]);
 		$foot = GlobaleView::footer();
-		echo $head.$foot;
+		$c = Categorie::get();
+		$cv = new CategorieView($c);
+		echo $head.$cv->render().$foot;
 	}
 	
 }

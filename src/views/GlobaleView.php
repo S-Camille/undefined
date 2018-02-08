@@ -9,10 +9,6 @@ class GlobaleView {
 		$rootUI = $app->request->getRootUri();
 		$rootUI = str_replace('index.php','',$rootUI);
 		$urlAccueil = $app->urlFor('Accueil');
-		//$urlConnexion = $app->urlFor('Connexion');
-		//$urlInscription = $app->urlFor('Inscription');
-		//$urlDeconnexion = $app->urlFor('Deconnexion');
-		//$urlMesListes = $app->urlFor('ListeUser');
 		$html = <<<END
 <!DOCTYPE html>
 <html>
@@ -21,6 +17,7 @@ class GlobaleView {
         <meta charset="UTF-8">
 		<link rel="shortcut icon" type="image/x-icon" href="$rootUI/../web/img/siteicone.ico" />
 		<link rel="stylesheet" href="$rootUI/web/css/header_footer.css" />
+		<link rel="stylesheet" href="$rootUI/web/css/all.css" />
 END;
 		foreach ($tabcss as $css) {
 			$html = $html.'<link rel="stylesheet" href="'.$rootUI.'/web/css/'.$css.'" />';
