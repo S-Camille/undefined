@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 
 use undefined\controllers\AccueilController;
 use undefined\controllers\ItemController;
-
+use undefined\controllers\ControleurItem;
 session_start();
 
 $db = new Illuminate\Database\Capsule\Manager();
@@ -22,9 +22,8 @@ $app->get('/', function(){
 
 
 $app->get('/categorie/:id', function($id){
-    //$c = new \undefined\controller\ControleurItem();
-    //$c->afficherItemsCategorie($id);
-    echo "toto";
+    $c = new ControleurItem();
+    $c->afficherItemsCategorie($id);
 });
 
 $app->get('/ListeItemsCat', function(){
