@@ -14,9 +14,9 @@ body {
 }
 
 header {
-	background-color: #797979; 
+	background-color: #ff957d; 
 	border-width: 25px; 
-	border-color: #797979; 
+	border-color: #ff957d; 
 	border-style: solid;
 	width: 100%;
 	padding-left: 0;
@@ -61,7 +61,8 @@ nav {
 
 #menu .li {
 	display: inline-block;
-	background-color: #F9A660; 
+	width: 100px;
+	background-color: #7dffe5; 
 	text-align: center;
 	margin: 0px;
 	padding: 10px;
@@ -78,8 +79,8 @@ nav {
 
 
 footer {
-	background-color: #797979; 
-	border: 3px #797979 solid;
+	background-color: #ff957d; 
+	border: 3px #ff957d solid;
 	width: 100%;
 }
 
