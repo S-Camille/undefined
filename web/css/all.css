@@ -7,8 +7,8 @@
 }
 
 .liste {
-    border: #FF4900 solid;
-    display: block;
+    /*border: #FF4900 solid;
+    display: block;*/
     margin: 0.2em auto;
     width: 30%;
     font-family: arial;
@@ -16,8 +16,9 @@
 }
 
 .cat_nom {
-    border-bottom: 3px #FF4900 solid;
+    /*border-bottom: 3px #FF4900 solid;*/
     font-weight: bold;
+		margin-bottom: 10%;
 }
 
 .cat_desc {
@@ -44,4 +45,17 @@ a:link, a:visited {
 
 h2 {
     text-align: center;
+}
+
+#bouton{
+	height: 200px;
+	width:100%;
+	margin: 10%;
+	border-radius: 10%;
+	border: none;
+	background-color: #F9A660;
+}
+
+body{
+	height:100%;
 }
