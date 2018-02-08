@@ -1,4 +1,5 @@
 <?php
+
 require 'vendor/autoload.php';
 
 use undefined\controllers\AccueilController;
@@ -66,6 +67,10 @@ $app->get('/auth/login', function(){
 	$cu->afficherConnexionForm();
 })->name('Connect');
 
+$app->get('/auth/loginErr', function(){
+    (new ControllerUser())->afficherConnexionForm("Veuillez vous connecter pour continuer");
+})->name('connectError');
+
 $app->post('/auth/login', function(){
 	$cu = new ControllerUser();
 	$cu->traiterConnexionForm();
@@ -91,20 +96,20 @@ $app->get('/AfficheReservation/:id', function($id){
     $arc->afficheReservationController($id);
 })->name('AffResNum');
 
-$app->get('auth/profile', function(){
-	// formulaire edition profil
+$app->get('/auth/profile', function(){
+	$cu = new ControllerUser();
+	$cu->afficherProfil();
 })->name('Profile');
 
-$app->post('auth/profile', function(){
-	// formulaire validation edition
+$app->post('/auth/profile', function(){
+	$cu = new ControllerUser();
+	$cu->editerProfil();
 })->name('Profile_valid');
-
 
 $app->get('/auth/logout', function(){
 	$cu = new ControllerUser();
 	$cu->deconnexion();
 })->name('Deco');
-
 
 $app->get('/admin', function(){
    $c = new \undefined\controllers\BackOfficeController();
@@ -114,6 +119,7 @@ $app->get('/admin', function(){
 $app->get('/confirm/:id', function($id){
     $c = new \undefined\controllers\BackOfficeController();
     $c->confirmerReservation($id);
-});
+   $c->afficherPage(-1);
+})->name('Admin');
 
 $app->run();

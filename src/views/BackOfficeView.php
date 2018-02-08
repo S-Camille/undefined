@@ -1,29 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Luc
- * Date: 08/02/2018
- * Time: 14:44
- */
 
 namespace undefined\views;
 
+class BackOfficeView {
 
+<<<<<<< HEAD
 use undefined\models\Reservation;
 
 class BackOfficeView
 {
+=======
+>>>>>>> ffed3f36c04ed9082a0c62aef52d2100e4b42dcd
     private $autorise;
     private $reservations;
 
-    public function __construct($autorise)
-    {
+    public function __construct($autorise) {
         $this->autorise = $autorise;
         $this->reservations = Reservation::get();
     }
 
-    public function render(){
-        if ($this->autorise){
+    public function render() {
+        if ($this->autorise) {
             $html = <<<END
             <h1>Back-office</h1>
             <h2>Liste des réservations</h2>
@@ -45,6 +42,7 @@ END;
             <p>Page réservée aux administrateurs</p>
 END;
         }
-        echo $html;
+        return $html;
     }
+
 }

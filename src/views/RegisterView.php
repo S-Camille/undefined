@@ -2,19 +2,17 @@
 
 namespace undefined\views;
 
+use undefined\views\GlobaleView;
 
 class RegisterView {
 
-	private $app;
-
- 	public function __construct() {
- 		$this->app = \Slim\Slim::getInstance();
-	}
+ 	public function __construct() {}
 
 	public function render() {
 		$it = GlobaleView::header(['css1' => 'formulaire.css', 'css2' => 'item.css']);
+                $app = \Slim\Slim::getInstance();
                 $it = $it . <<<END
-                <form action="{$this->app->urlFor('Register_valid')}" method="POST">
+                <form action="{$app->urlFor('Register_valid')}" method="POST">
                 <label for="username">Pseudo :</label>
                 <input type="text" name="username" /><br />
 

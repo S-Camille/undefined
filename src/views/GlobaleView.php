@@ -19,7 +19,7 @@ class GlobaleView {
 <head>
 		<title>Garage Week Planner</title>
         <meta charset="UTF-8">
-		<link rel="shortcut icon" type="image/x-icon" href="$rootUI/../web/img/siteicone.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="$rootUI/web/img/siteicone.ico" />
 		<link rel="stylesheet" href="$rootUI/web/css/header_footer.css" />
 		<link rel="stylesheet" href="$rootUI/web/css/all.css" />
 END;
@@ -28,14 +28,14 @@ END;
 		}
 		$html = $html.<<<END
 </head>
-<sbody>
+<body>
 <div>
 	<header>
 		<label id="titre"><a href="$urlAccueil">Garage Week Planner</a></label>
 <nav>
 		<div id="menu">
 END;
-		if (isset($_SESSION['user_connected'])) {
+		if (isset($_SESSION['user'])) {
 			$html = $html.<<<END
 			<div id="menucenter" class="li"><a href="$urlProf">Mon profil</a></div><div class="li"><a href="$urlDeconnexion">Déconnexion</a></div>
 END;
@@ -46,7 +46,7 @@ END;
 			<div class="li"><a href="$urlInscription">Inscription</a></div>
 END;
 		}
-		$html=$html.<<<END
+		$html = $html.<<<END
 		</div>
 	</nav>
 	</header>

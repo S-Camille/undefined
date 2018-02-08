@@ -7,26 +7,28 @@ use undefined\models\Reservation;
 
 class ValidationFormulaireReservationController{
 
-    public function __construct(){}
+    public function __construct() {}
 
-    public function validation(){
-        $res = new Reservation();
+    public function validation() {
         $app = \Slim\Slim::getInstance();
-        echo "blabla : " .$app->request->post('deb');
-        $res->h_debut = $app->request->post('deb');
-        $res->h_fin = $app->request->post('fin');
-        $res->j_debut = $app->request->post('jourDeb');
-        $res->j_fin = $app->request->post('jourDeb');
-        if (isset($_SESSION["user_connected"])){
-            $res->id_utili = $_SESSION["user_connected"]["id_utili"];
+        if (isset($_SESSION["user"])) {
+            $user = "";
+            $res = new Reservation();
+            $res->h_debut = $app->request->post('deb');
+            $res->h_fin = $app->request->post('fin');
+            $res->j_debut = $app->request->post('jourDeb');
+            $res->j_fin = $app->request->post('jourDeb');
+            $user = unserialize($_SESSION['user']);
+            $res->id_utili = $user->id;
+            $res->etat = null;
+            $res->creation = date("Y-m-d   H:i:s",time());
+            $res->modification = date("Y-m-d   H:i:s",time());
+            $res->save();
+            $app->redirect($app->urlFor('Accueil'));
         }
-        else{
-            $res->id_utili = -1;
+        else {
+            $app->redirect($app->urlFor("connectError"));
         }
-        $res->etat = null;
-        $res->creation = date("Y-m-d   H:i:s",time());
-        $res->modification = date("Y-m-d   H:i:s",time());
-        $res->id_utili = 1;
-        $res->save();
     }
+    
 }

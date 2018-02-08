@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Luc
- * Date: 08/02/2018
- * Time: 11:13
- */
+
 namespace undefined\views;
 
 use undefined\models\Categorie;
@@ -40,8 +35,7 @@ END;
 END;
         }
         echo "</div>";
-
         return $html;
-
     }
+
 }

@@ -2,8 +2,6 @@
 
 namespace undefined\views;
 
-use undefined\models\Categorie;
-
 class CategorieView {
 
 	private $cat;
