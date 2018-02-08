@@ -2,12 +2,13 @@
 require 'vendor/autoload.php';
 
 use undefined\controllers\AccueilController;
+use undefined\controllers\FormulaireReservationController;
 use undefined\controllers\ItemController;
 use undefined\controllers\ControleurItem;
 use undefined\controllers\ControleurUtilisateur;
 use undefined\controllers\AfficheReservationControllers;
 use undefined\controllers\ControllerUser;
-
+use undefined\controllers\ValidationFormulaireReservationController;
 session_start();
 
 $db = new Illuminate\Database\Capsule\Manager();
@@ -55,6 +56,15 @@ $app->get('/utilisateurs',function(){
 	$cu=new ControleurUtilisateur();
 	$cu->afficherListeUtilisateurs();
 });
+$app->get('/AffForm',function(){
+    $afc = new FormulaireReservationController();
+    $afc->affichageFormulaire();
+})->name('AffichageFormulaire');
+
+$app->post('/ValRes', function (){
+    $vf = new ValidationFormulaireReservationController();
+    $vf->validation();
+})->name('ValidationFormulaire');
 
 
 // CONNEXION
@@ -84,12 +94,12 @@ $app->get('/AfficheReservation/:id', function($id){
     $arc->afficheReservationController($id);
 })->name('AffResNum');
 
-$app->get('auth/profile', function(){
-	// formulaire edition profil
+$app->get('/auth/profile', function(){
+	(new ControllerUser())->afficherProfil();
 })->name('profile');
 
-$app->post('auth/profile', function(){
-	// formulaire validation edition
+$app->post('/auth/profile', function(){
+	(new ControllerUser())->editerProfil();
 })->name('profile_valid');
 
 

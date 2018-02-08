@@ -9,6 +9,7 @@ namespace undefined\controllers;
 
 use undefined\views\RegisterView;
 use undefined\views\ConnexionView;
+use undefined\views\ProfileView;
 use undefined\models\User;
 
 class ControllerUser {
@@ -50,11 +51,29 @@ class ControllerUser {
     }
 
     public function afficherProfil(){
-
+        if(isset($_SESSION['user']))
+            echo (new ProfileView())->render();  
+        else {
+            $app = \Slim\Slim::getInstance();
+            $app->redirect($app->urlFor('Accueil'));
+        }     
     }
 
     public function editerProfil(){
+        if(!isset($_SESSION['user']))
+        {
+            $app = \Slim\Slim::getInstance();
+            $app->redirect($app->urlFor('Accueil'));  
+        }
 
+        if(isset($_POST['password']))
+        {
+            $user = unserialize($_SESSION['user']);
+            $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $user->save();
+            $app = \Slim\Slim::getInstance();
+            $app->redirect($app->urlFor('profile'));
+        }
     }
 
     public function deconnexion(){
