@@ -41,7 +41,7 @@ class ItemView {
 		$desc = $this->item->description;
 		$app = \Slim\Slim::getInstance();
 		$img = $app->request()->getRootUri().'/web/img/item/'.$id.'.jpg';
-		$it = GlobaleView::header(['css1' => 'formulaire.css', 'css2' => 'item.css']);
+		$it = GlobaleView::header(['css1' => 'formu.css', 'css2' => 'item.css']);
         $it = $it . <<<END
         <div id="affItem">
         <div>

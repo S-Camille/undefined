@@ -13,6 +13,7 @@ class GlobaleView {
 		$urlInscription = $app->urlFor('Register');
 		$urlProf = $app->urlFor('Profile');
 		$urlDeconnexion = $app->urlFor('Deco');
+		$urlUti = $app->urlFor('Uti');
 		$html = <<<END
 <!DOCTYPE html>
 <html>
@@ -22,6 +23,7 @@ class GlobaleView {
 		<link rel="shortcut icon" type="image/x-icon" href="$rootUI/web/img/siteicone.ico" />
 		<link rel="stylesheet" href="$rootUI/web/css/header_footer.css" />
 		<link rel="stylesheet" href="$rootUI/web/css/all.css" />
+		<link rel="stylesheet" href="$rootUI/web/css/formu.css" />
 END;
 		foreach ($tabcss as $css) {
 			$html = $html.'<link rel="stylesheet" href="'.$rootUI.'/web/css/'.$css.'" />';
@@ -37,7 +39,7 @@ END;
 END;
 		if (isset($_SESSION['user'])) {
 			$html = $html.<<<END
-			<div id="menucenter" class="li"><a href="$urlProf">Mon profil</a></div><div class="li"><a href="$urlDeconnexion">Déconnexion</a></div>
+			<div class="li"><a href="$urlUti">Liste Utilisateurs</a></div><div id="menucenter" class="li"><a href="$urlProf">Mon profil</a></div><div class="li"><a href="$urlDeconnexion">Déconnexion</a></div>
 END;
 		}
 		else {

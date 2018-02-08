@@ -1,0 +1,23 @@
+form {
+	width: 600px;
+    border: 1px #B2EBFC solid;
+    background-color: #B2EBFC;
+    padding: 10px;
+    margin: auto;
+}
+
+form label {
+	width: 400px;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+form input {
+	margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+	margin: auto;
+	margin-top: 25px;
+	display: block;
+}
