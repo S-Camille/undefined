@@ -23,11 +23,13 @@ class BackOfficeView
 END;
             foreach ($this->reservations as $r){
                 $util = $r->user()->first();
-                $url = $app->urlFor('ConfirmationReservation',['id' => $r->id_res]);
+                $urlConf = $app->urlFor('ConfirmationReservation',['id' => $r->id_res]);
+                $urlAnn = $app->urlFor('AnnuleeReservation',['id' => $r->id_res]);
                 $html .=  <<<END
                 <div>
                     <p>Réservation {$r->id_res}, par {$util->nom}</p>
-                    <a href="$url">Confirmer la réservation</a>
+                    <a href="$urlConf">Confirmer la réservation</a>
+                    <a href="$urlAnn">Annuler la réservation</a>
                 </div>
 END;
                 }

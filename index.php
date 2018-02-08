@@ -136,4 +136,9 @@ $app->get('/changementStatus/:id', function($id){
     $c->confirmerReservation($id);
 })->name('ConfirmationReservation');
 
+$app->get('/annulerRes/:id', function($id){
+    $c = new BackOfficeController();
+    $c->annulerReservation($id);
+})->name('AnnuleeReservation');
+
 $app->run();
