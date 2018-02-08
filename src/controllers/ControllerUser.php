@@ -74,7 +74,7 @@ class ControllerUser {
             $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $user->save();
             $app = \Slim\Slim::getInstance();
-            $app->redirect($app->urlFor('profile'));
+            $app->redirect($app->urlFor('Profile'));
         }
     }
 
