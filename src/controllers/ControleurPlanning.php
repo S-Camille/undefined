@@ -56,7 +56,7 @@ class ControleurPlanning {
           $tab = $this->reserverHoraire($value->j_fin-1,$l,$tab);
         }
       }else{
-        for ($l=$value->h_debut; $l < $value->h_fin-8; $l++) {
+        for ($l=$value->h_debut-8; $l < $value->h_fin-8; $l++) {
           $tab = $this->reserverHoraire($value->j_fin-1,$l,$tab);
         }
       }
