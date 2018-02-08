@@ -40,8 +40,8 @@ $app->get('/PlanningGraph/:id', function($id){
 	$c->afficherPlanning($id);
 })->name('PlanningGraph');
 
-$app->get('/FormRes', function(){
-	$afc = new FormulaireReservationController();
+$app->get('/FormRes/:id', function($id){
+	$afc = new FormulaireReservationController($id);
     $afc->affichageFormulaire();
 })->name('FormRes');
 

@@ -34,11 +34,11 @@ class ValidationFormulaireReservationController{
 
             if($valide == 1) {
                 $res->save();
+                $app->redirect($app->urlFor('Accueil'));
             }
             else{
-                $app->redirect($app->urlFor('ListeReserv', [id => $res->id_item]));
+                $app->redirect($app->urlFor('FormRes', ['id' => $res->id_item]));
             }
-            $app->redirect($app->urlFor('Accueil'));
         }
         else {
             $app->redirect($app->urlFor("connectError"));
