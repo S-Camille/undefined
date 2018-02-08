@@ -91,13 +91,14 @@ $app->get('/AfficheReservation/:id', function($id){
     $arc->afficheReservationController($id);
 })->name('AffResNum');
 
-$app->get('auth/profile', function(){
-	// formulaire edition profil
-})->name('Profile');
+$app->get('/auth/profile', function(){
+	(new ControllerUser())->afficherProfil();
+})->name('profile');
 
-$app->post('auth/profile', function(){
-	// formulaire validation edition
-})->name('Profile_valid');
+$app->post('/auth/profile', function(){
+	(new ControllerUser())->editerProfil();
+})->name('profile_valid');
+
 
 
 $app->get('/auth/logout', function(){
