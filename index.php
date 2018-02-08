@@ -108,7 +108,12 @@ $app->get('/auth/logout', function(){
 
 $app->get('/admin', function(){
    $c = new \undefined\controllers\BackOfficeController();
-   $c->afficherPage(-1);
+   $c->afficherPage(0);
+});
+
+$app->get('/confirm/:id', function($id){
+    $c = new \undefined\controllers\BackOfficeController();
+    $c->confirmerReservation($id);
 });
 
 $app->run();

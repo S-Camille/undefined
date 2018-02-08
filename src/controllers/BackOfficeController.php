@@ -7,11 +7,14 @@
  */
 
 namespace undefined\controllers;
+use undefined\models\Reservation;
 use undefined\views\BackOfficeView;
 use undefined\models\User;
 class BackOfficeController {
 
     private $user;
+    const RESERVE = 1;
+    const ADMIN = 12;
 
     public function __construct()
     {
@@ -32,5 +35,15 @@ class BackOfficeController {
     public function estAutorise($niveau_demande){
         $niveau = unserialize($_SESSION['user'])->niveau;
         return $niveau >= $niveau_demande;
+    }
+
+    public function confirmerReservation($id_res){
+        $res = Reservation::where('id_res', '=', $id_res)->first();
+        if ($this->estAutorise(BackOfficeController::ADMIN)) {
+            $res->etat = BackOfficeController::RESERVE;
+            $res->save();
+        }
+        $v = new BackOfficeView(true);
+        $v->render();
     }
 }
