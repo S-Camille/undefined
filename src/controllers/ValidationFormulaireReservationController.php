@@ -24,7 +24,8 @@ class ValidationFormulaireReservationController{
             $res->id_utili = -1;
         }
         $res->etat = null;
-        $res->modification = null;
+        $res->creation = date("Y-m-d   H:i:s",time());
+        $res->modification = date("Y-m-d   H:i:s",time());
         $res->id_utili = 1;
         $res->save();
     }
