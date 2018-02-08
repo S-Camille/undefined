@@ -1,5 +1,5 @@
 #resa td {
-    border: 1px solid black;
+    border: 2px solid black;
     font-weight: bold;
     padding: 15px 25px;
     text-align: center;
@@ -19,7 +19,7 @@
 }
 
 #resa th.day {
-	border-right: 1px solid black;
+	border-right: 2px solid black;
 	padding-bottom: 15px;
 	padding-top: 15px;
 }
@@ -29,7 +29,7 @@
 
 #resa th.hour {
 	padding-right: 15px;
-	border-bottom: 1px solid black;
+	border-bottom: 2px solid black;
 	padding-left: 15px;
 }
 #resa th.hour:last-child {
@@ -37,9 +37,9 @@
 }
 
 #resa .dispo {
-	background-color: lightgrey;
+	background-color: #7dffe5;
 }
 
 #resa .indispo {
-	background-color: darkgrey;
+	background-color: #ff957d;
 }
