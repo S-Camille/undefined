@@ -39,6 +39,10 @@ class ControllerUser {
     public function traiterInscriptionForm() {
         $app = \Slim\Slim::getInstance();
         if (isset($_POST['username']) && isset($_POST['password'])) {
+            $user = User::where('nom', '=', $_POST['username'])->first();
+            if(isset($user)) {
+                $app->redirect($app->urlFor('Register'));
+            }
             $user = new User();
             $user->nom = htmlspecialchars($_POST['username']);
             $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);

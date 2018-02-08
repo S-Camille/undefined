@@ -35,7 +35,7 @@ END;
 <nav>
 		<div id="menu">
 END;
-		if (isset($_SESSION['user_connected'])) {
+		if (isset($_SESSION['user'])) {
 			$html = $html.<<<END
 			<div id="menucenter" class="li"><a href="$urlProf">Mon profil</a></div><div class="li"><a href="$urlDeconnexion">Déconnexion</a></div>
 END;
