@@ -109,7 +109,7 @@ $app->get('/auth/logout', function(){
 
 $app->get('/admin', function(){
    $c = new \undefined\controllers\BackOfficeController();
-   $c->afficherPage();
+   $c->afficherPage(-1);
 });
 
 $app->run();
