@@ -11,7 +11,7 @@ use undefined\models\Reservation;
 class ControleurPlanning {
 
   private $reserve;
- 
+
   private $heures = ["8H", "10H", "12H", "14H", "16H", "18H"];
 
   private $jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
@@ -22,34 +22,44 @@ class ControleurPlanning {
       foreach ($reservations as $key => $value) {
         if ($value->j_debut<$value->j_fin) {
           for ($j=0; $j < $value->j_fin-1 ; $j++) {
-            for ($i=0; $i < 11; $i++) {
+            for ($i=$value->h_debut; $i < 11; $i++) {
               $tab = $this->reserverHoraire($j,$i,$tab);
             }
           }
+          for ($l=0; $l < $value->h_fin-8; $l++) {
+            $tab = $this->reserverHoraire($value->j_fin-1,$l,$tab);
+          }
+        }else{
+          for ($l=$value->h_debut; $l < $value->h_fin-8; $l++) {
+            $tab = $this->reserverHoraire($value->j_fin-1,$l,$tab);
+          }
         }
-        for ($l=0; $l < $value->h_fin-8; $l++) {
-          $tab = $this->reserverHoraire($value->j_fin-1,$l,$tab);
-        }
+
       }
       $vP = new VuePlanning($this->affichagePlanning($tab));
       echo GlobaleView::header([]).$vP->render().GlobaleView::footer();
 
   }
-  
+
   function afficherPlanningUtilisateur($id){
     $tab=$this->initialiserPlanning();
     $reservations=Reservation::where('id_utili',"=",$id)->get();
     foreach ($reservations as $key => $value) {
-      if($value->j_debut<$value->j_fin){
+      if ($value->j_debut<$value->j_fin) {
         for ($j=0; $j < $value->j_fin-1 ; $j++) {
-          for ($i=0; $i < 11; $i++) {
-            $tab=$this->reserverHoraire($j,$i,$tab);
+          for ($i=$value->h_debut; $i < 11; $i++) {
+            $tab = $this->reserverHoraire($j,$i,$tab);
           }
         }
+        for ($l=0; $l < $value->h_fin-8; $l++) {
+          $tab = $this->reserverHoraire($value->j_fin-1,$l,$tab);
+        }
+      }else{
+        for ($l=$value->h_debut; $l < $value->h_fin-8; $l++) {
+          $tab = $this->reserverHoraire($value->j_fin-1,$l,$tab);
+        }
       }
-      for ($l=0; $l < $value->h_fin-8; $l++) {
-        $tab=$this->reserverHoraire($value->j_fin-1,$l,$tab);
-      }
+
     }
     $vP=new VuePlanning($this->affichagePlanning($tab));
     $vP->render();
