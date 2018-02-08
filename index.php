@@ -66,6 +66,10 @@ $app->get('/auth/login', function(){
 	$cu->afficherConnexionForm();
 })->name('Connect');
 
+$app->get('/auth/loginErr', function(){
+    (new ControllerUser())->afficherConnexionForm("Veuillez vous connecter pour continuer");
+})->name('connectError');
+
 $app->post('/auth/login', function(){
 	$cu = new ControllerUser();
 	$cu->traiterConnexionForm();

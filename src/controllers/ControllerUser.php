@@ -14,8 +14,8 @@ use undefined\models\User;
 
 class ControllerUser {
 
-    public function afficherConnexionForm(){
-         echo (new ConnexionView())->render();       
+    public function afficherConnexionForm($msgErr = null){
+         echo (new ConnexionView())->render($msgErr);
     }
 
     public function traiterConnexionForm(){
@@ -33,7 +33,12 @@ class ControllerUser {
     }
 
     public function afficherInscriptionForm(){
-        echo (new RegisterView())->render();
+        if ($msgErr != null ){
+            echo (new RegisterView())->render();
+        }
+        else {
+            echo (new RegisterView())->render($msgErr);
+        }
     }
 
     public function traiterInscriptionForm(){
