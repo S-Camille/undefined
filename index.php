@@ -10,13 +10,13 @@ use undefined\controllers\ControleurUtilisateur;
 use undefined\controllers\AfficheReservationControllers;
 use undefined\controllers\ControllerUser;
 use undefined\controllers\ValidationFormulaireReservationController;
+
 session_start();
 
 $db = new Illuminate\Database\Capsule\Manager();
 $db->addConnection(parse_ini_file('src/conf/conf.ini'));
 $db->setAsGlobal();
 $db->bootEloquent();
-
 
 $app = new Slim\Slim();
 
@@ -39,7 +39,8 @@ $app->get('/PlanningGraph', function(){
 })->name('PlanningGraph');
 
 $app->get('/FormRes', function(){
-
+	$afc = new FormulaireReservationController();
+    $afc->affichageFormulaire();
 })->name('FormRes');
 
 $app->get('/Item/:id', function($id){
@@ -51,11 +52,6 @@ $app->get('/utilisateurs',function(){
 	$cu = new ControleurUtilisateur();
 	$cu->afficherListeUtilisateurs();
 })->name('Uti');
-
-$app->get('/AffForm',function(){
-    $afc = new FormulaireReservationController();
-    $afc->affichageFormulaire();
-})->name('AffichageFormulaire');
 
 $app->post('/ValRes', function (){
     $vf = new ValidationFormulaireReservationController();
@@ -69,7 +65,7 @@ $app->get('/auth/login', function(){
 
 $app->get('/auth/loginErr', function(){
     (new ControllerUser())->afficherConnexionForm("Veuillez vous connecter pour continuer");
-})->name('connectError');
+})->name('ConnectError');
 
 $app->post('/auth/login', function(){
 	$cu = new ControllerUser();

@@ -15,7 +15,7 @@ class FormulaireReservationController {
         }
         else {
             $app = \Slim\Slim::getInstance();
-            $app->redirect($app->urlFor('connectError'));
+            $app->redirect($app->urlFor('ConnectError'));
         }
     }
     
