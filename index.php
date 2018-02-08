@@ -73,4 +73,12 @@ $app->get('/AfficheReservation/:id', function($id){
     $arc->afficheReservationController($id);
 })->name('AffResNum');
 
+$app->get('auth/profile', function(){
+	// formulaire edition profil
+})->name('profile');
+
+$app->post('auth/profile', function(){
+	// formulaire validation edition
+})->name('profile_valid');
+
 $app->run();
