@@ -12,7 +12,7 @@ class ControleurPlanning {
 
   private $reserve;
 
-  private $heures = ["8H", "10H", "12H", "14H", "16H", "18H"];
+  private $heures = ["8H", "9H","10H", "11H","12H", "13H","14H" , "15H","16H", "17H","18H"];
 
   private $jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 
@@ -36,6 +36,7 @@ class ControleurPlanning {
         }
 
       }
+
       $vP = new VuePlanning($this->affichagePlanning($tab));
       echo GlobaleView::header([]).$vP->render().GlobaleView::footer();
 
@@ -91,16 +92,20 @@ class ControleurPlanning {
     $jours = $this->jours;
     $reserve = $tab;
     $res = '<table id="resa"><tr><th></th>';
-    foreach ($jours as $k => $v) {
-      $res .= "<th class=\"day\">".$v."</th>";
+    foreach ($jours as $ke => $val) {
+      $res .= "<th class=\"day\">".$val."</th>";
     }
     $res .= "</tr>";
     $res .= "<tr>";
     foreach ($heures as $k => $v) {
+
       $res .= "<th class=\"hour\">".$heures[$k]."</th>";
+
       foreach ($jours as $key => $value) {
-        $res .= "<td class=\"".(($reserve[$key][$k] == 'Vacant') ? 'dispo' : 'indispo')."\">".$reserve[$key][$k]."</td>";
+
+          $res .= "<td>".$reserve[$key][$k]."</td>";
       }
+
     $res .= "</tr>";
     }
     return $res."</table>";
