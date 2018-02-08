@@ -20,7 +20,7 @@ class ValidationFormulaireReservationController{
             $res->id_item = $res->j_fin = $app->request->post('Id_item');
             $res->j_debut = $app->request->post('JourDeb');
             $res->j_fin = $app->request->post('JourFin');
-            $resJ = Reservation::where("j_debut",'>=',$app->request->post('JourDeb'))->where("j_fin",'<=',$app->request->post('JourFin'))->get();
+            $resJ = Reservation::where("j_debut",'=>',$app->request->post('JourDeb'))->where("j_fin",'=<',$app->request->post('JourFin'))->get();
             foreach ($resJ as $blabla){
                 $debBla = $blabla->j_debut * 100 + $blabla->h_debut;
                 $debRes = $res->j_debut * 100 + $res->h_debut;

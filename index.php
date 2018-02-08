@@ -3,6 +3,7 @@
 require 'vendor/autoload.php';
 
 use undefined\controllers\AccueilController;
+use undefined\controllers\BackOfficeController;
 use undefined\controllers\FormulaireReservationController;
 use undefined\controllers\ItemController;
 use undefined\controllers\ControleurItem;
@@ -122,12 +123,17 @@ $app->get('/auth/logout', function(){
 $app->get('/admin', function(){
    $c = new \undefined\controllers\BackOfficeController();
    $c->afficherPage(0);
-});
+})->name('AffichagePasgeAdmin');
 
 $app->get('/confirm/:id', function($id){
     $c = new \undefined\controllers\BackOfficeController();
     $c->confirmerReservation($id);
    $c->afficherPage(-1);
 })->name('Admin');
+
+$app->get('/changementStatus/:id', function($id){
+    $c = new BackOfficeController();
+    $c->confirmerReservation($id);
+})->name('ConfirmationReservation');
 
 $app->run();

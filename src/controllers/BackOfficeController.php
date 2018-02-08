@@ -4,6 +4,7 @@ namespace undefined\controllers;
 use undefined\models\Reservation;
 use undefined\views\BackOfficeView;
 use undefined\models\User;
+use undefined\views\GlobaleView;
 
 class BackOfficeController {
 
@@ -18,8 +19,10 @@ class BackOfficeController {
 
     public function afficherPage($niveau) {
         if ($this->estAutorise($niveau)) {
+            $head = GlobaleView::header([]);
+            $foot = GlobaleView::footer();
             $v = new BackOfficeView(true);
-            echo $v->render();
+            echo $head . $v->render() . $foot;
         }
         else {
             $v = new BackOfficeView(false);
@@ -34,13 +37,13 @@ class BackOfficeController {
     }
 
     public function confirmerReservation($id_res){
+        $app = \Slim\Slim::getInstance();
         $res = Reservation::where('id_res', '=', $id_res)->first();
         if ($this->estAutorise(BackOfficeController::ADMIN)) {
             $res->etat = BackOfficeController::RESERVE;
             $res->save();
         }
-        $v = new BackOfficeView(true);
-        $v->render();
+        $app->redirect($app->urlFor('AffichagePasgeAdmin'));
     }
 
 }

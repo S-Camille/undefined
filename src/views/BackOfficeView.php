@@ -15,6 +15,7 @@ class BackOfficeView
     }
 
     public function render() {
+        $app = \Slim\Slim::getInstance();
         if ($this->autorise) {
             $html = <<<END
             <h1>Back-office</h1>
@@ -22,11 +23,11 @@ class BackOfficeView
 END;
             foreach ($this->reservations as $r){
                 $util = $r->user()->first();
+                $url = $app->urlFor('ConfirmationReservation',['id' => $r->id_res]);
                 $html .=  <<<END
                 <div>
-                    <p>Réservation $r->id_res</p>
-                    <p>Réservé par $util->nom</p>
-                    <a href="confirm/$r->id_res">Confirmer la réservation</a>
+                    <p>Réservation {$r->id_res}, par {$util->nom}</p>
+                    <a href="$url">Confirmer la réservation</a>
                 </div>
 END;
                 }
