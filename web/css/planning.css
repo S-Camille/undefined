@@ -1,0 +1,16 @@
+#resa td {
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+#resa {
+    border-collapse: collapse;
+}
+
+#resa tr td:first-child {
+    text-align: center;
+}
+
+#resa tr td:last-child {
+    text-align: right;
+}
