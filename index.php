@@ -96,14 +96,14 @@ $app->get('/AfficheReservation/:id', function($id){
 })->name('AffResNum');
 
 $app->get('/auth/profile', function(){
-	(new ControllerUser())->afficherProfil();
-})->name('profile');
+	$cu = new ControllerUser();
+	$cu->afficherProfil();
+})->name('Profile');
 
 $app->post('/auth/profile', function(){
-	(new ControllerUser())->editerProfil();
-})->name('profile_valid');
-
-
+	$cu = new ControllerUser();
+	$cu->editerProfil();
+})->name('Profile_valid');
 
 $app->get('/auth/logout', function(){
 	$cu = new ControllerUser();
@@ -114,6 +114,6 @@ $app->get('/auth/logout', function(){
 $app->get('/admin', function(){
    $c = new \undefined\controllers\BackOfficeController();
    $c->afficherPage(-1);
-});
+})->name('Admin');
 
 $app->run();
