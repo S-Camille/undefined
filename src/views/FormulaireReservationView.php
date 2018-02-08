@@ -18,20 +18,14 @@ class FormulaireReservationView{
         $html = <<<END
         <script> function heure(nb, element) { val deb = document.getElementById(element); deb.value = nb;}</script>
 <form method="POST" action="$url" id="ajoutItem" enctype="multipart/form-data">
+
 	<label>Formulaire Res</label>
-<<<<<<< HEAD
 	<input type="hidden" name="HeureDeb" id="heureDeb" value="8"/>
 	<input type="hidden" name="HeureFin" id="heureFin" value="10"/>
 	<input type="hidden" name="Id_item" id="id_item" value="{$this->id}">
-	<select id="jourDeb" name="JourDeb">
-=======
-	<input type="hidden" name="heureDeb" id="heureDeb" value="8"/>
-	<input type="hidden" name="heureFin" id="heureFin" value="10"/>
-	<input type="hidden" name="id_item" id="id_item" value="{$this->id}">
-	
+
 	<label><br/> Jour de début : </label>
-	<select id="jourDeb" name="jourDeb">
->>>>>>> correction d'un bug empechant la reservation sur plusieurs jours
+	<select id="jourDeb" name="JourDeb">
         <option value="1" selected>Lundi</option> 
         <option value="2" >Mardi</option>
         <option value="3">Mercredi</option>
