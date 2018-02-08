@@ -28,7 +28,7 @@ END;
 		}
 		$html = $html.<<<END
 </head>
-<sbody>
+<body>
 <div>
 	<header>
 		<label id="titre"><a href="$urlAccueil">Garage Week Planner</a></label>
