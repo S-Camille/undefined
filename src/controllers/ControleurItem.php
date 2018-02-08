@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Luc
- * Date: 08/02/2018
- * Time: 11:06
- */
+
 namespace undefined\controllers;
 
 use undefined\models\Categorie;

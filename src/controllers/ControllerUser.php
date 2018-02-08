@@ -34,9 +34,6 @@ class ControllerUser {
         if ($msgErr != null) {
             echo (new RegisterView())->render();
         }
-        else {
-            echo (new RegisterView())->render($msgErr);
-        }
     }
 
     public function traiterInscriptionForm() {

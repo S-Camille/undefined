@@ -24,9 +24,10 @@ class ValidationFormulaireReservationController{
             $res->creation = date("Y-m-d   H:i:s",time());
             $res->modification = date("Y-m-d   H:i:s",time());
             $res->save();
+            $app->redirect($app->urlFor('Accueil'));
         }
         else{
-            $app->redirect("connectError");
+            $app->redirect($app->urlFor("connectError"));
         }
     }
 }
