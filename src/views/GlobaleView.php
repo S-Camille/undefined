@@ -4,20 +4,20 @@ namespace undefined\views;
 
 class GlobaleView {
 
-	public static function header($tabcss, $title) {
+	public static function header($tabcss) {
 		$app = \Slim\Slim::getInstance();
 		$rootUI = $app->request->getRootUri();
 		$rootUI = str_replace('index.php','',$rootUI);
-		$urlAcceuil = $app->urlFor('Accueil');
-		$urlConnexion = $app->urlFor('Connexion');
-		$urlInscription = $app->urlFor('Inscription');
-		$urlDeconnexion = $app->urlFor('Deconnexion');
-		$urlMesListes = $app->urlFor('ListeUser');
+		$urlAccueil = $app->urlFor('Accueil');
+		//$urlConnexion = $app->urlFor('Connexion');
+		//$urlInscription = $app->urlFor('Inscription');
+		//$urlDeconnexion = $app->urlFor('Deconnexion');
+		//$urlMesListes = $app->urlFor('ListeUser');
 		$html = <<<END
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Garage Week Planner : $title</title>
+		<title>Garage Week Planner</title>
         <meta charset="UTF-8">
 		<link rel="shortcut icon" type="image/x-icon" href="$rootUI/../web/img/siteicone.ico" />
 		<link rel="stylesheet" href="$rootUI/web/css/header_footer.css" />
@@ -30,22 +30,22 @@ END;
 <body>
 <div>
 	<header>
-		
+		<label id="titre">Garage Week Planner</label>
 	</header>
 <nav>
 		<div id="menu">
-			<div class="li"><a href="$urlAcceuil">Accueil</a></div><!--
+			<div class="li"><a href="$urlAccueil">Accueil</a></div><!--
 END;
 		if (isset($_SESSION['user_connected'])) {
 			$html = $html.<<<END
-			--><div id="menucenter" class="li"><a href="$urlMesListes">Tableau de bord</a></div><!--
-			--><div class="li"><a href="$urlDeconnexion">Déconnexion</a></div>
+			--><div id="menucenter" class="li"><a href="">Tableau de bord</a></div><!--
+			--><div class="li"><a href="">Déconnexion</a></div>
 END;
 		}
 		else {
 			$html = $html.<<<END
-			--><div id="menucenter" class="li"><a href="$urlConnexion">Connexion</a></div><!--
-			--><div class="li"><a href="$urlInscription">Inscription</a></div>
+			--><div id="menucenter" class="li"><a href="">Connexion</a></div><!--
+			--><div class="li"><a href="">Inscription</a></div>
 END;
 		}
 		$html=$html.<<<END

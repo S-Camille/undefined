@@ -5,8 +5,11 @@
         "php": ">=5.6",
         "slim/slim": "2.*"
     },
+
     "autoload": {
-    	"src/":"undefined"
+    	"psr-4": {
+    		"undefined\\" : "src/"
+    	}
     }
     
 }
