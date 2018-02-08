@@ -14,5 +14,10 @@ $app = new Slim\Slim();
 $app->get('/', function(){
 	echo "Hello world";
 });
+$app->get('/categorie/:id', function($id){
+   //$c = new \undefined\controller\ControleurItem();
+   //$c->afficherItemsCategorie($id);
+   echo "toto";
+});
 
 $app->run();
