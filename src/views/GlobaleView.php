@@ -19,7 +19,7 @@ class GlobaleView {
 <head>
 		<title>Garage Week Planner</title>
         <meta charset="UTF-8">
-		<link rel="shortcut icon" type="image/x-icon" href="$rootUI/../web/img/siteicone.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="$rootUI/web/img/siteicone.ico" />
 		<link rel="stylesheet" href="$rootUI/web/css/header_footer.css" />
 		<link rel="stylesheet" href="$rootUI/web/css/all.css" />
 END;
