@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 
 use undefined\controllers\AccueilController;
 use undefined\controllers\BackOfficeController;
+use undefined\controllers\EnsembleReservationController;
 use undefined\controllers\FormulaireReservationController;
 use undefined\controllers\ItemController;
 use undefined\controllers\ControleurItem;
@@ -137,5 +138,15 @@ $app->get('/annulerRes/:id', function($id){
     $c = new BackOfficeController();
     $c->annulerReservation($id);
 })->name('AnnuleeReservation');
+
+$app->get('/afficherReservations', function(){
+    $er = new EnsembleReservationController();
+    $er->affichage();
+})->name('affichageReservations');
+
+$app->get('/annulerResInd/:id', function($id){
+    $c = new BackOfficeController();
+    $c->annulerReservation($id, 1);
+})->name('AnnuleeReservationInd');
 
 $app->run();

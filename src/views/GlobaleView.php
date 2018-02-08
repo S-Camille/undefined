@@ -14,6 +14,7 @@ class GlobaleView {
 		$urlProf = $app->urlFor('Profile');
 		$urlDeconnexion = $app->urlFor('Deco');
 		$urlUti = $app->urlFor('Uti');
+		$urlRes =$app->urlFor('affichageReservations');
 		$html = <<<END
 <!DOCTYPE html>
 <html>
@@ -38,9 +39,9 @@ END;
 <nav>
 		<div id="menu">
 END;
-		if (isset($_SESSION['user'])) {
+		if (isset($_SESSION['user'])) { //<a href="$urlRes">Liste Réservations</a>
 			$html = $html.<<<END
-			<div class="li"><a href="$urlUti">Liste Utilisateurs</a></div><div id="menucenter" class="li"><a href="$urlProf">Mon profil</a></div><div class="li"><a href="$urlDeconnexion">Déconnexion</a></div>
+			<div class="li"><a href="$urlRes">Liste Réservations</a></div><div class="li"><a href="$urlUti">Liste Utilisateurs</a></div><div id="menucenter" class="li"><a href="$urlProf">Mon profil</a></div><div class="li"><a href="$urlDeconnexion">Déconnexion</a></div>
 END;
 		}
 		else {
