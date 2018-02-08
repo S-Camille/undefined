@@ -6,6 +6,7 @@ use undefined\controllers\ItemController;
 use undefined\controllers\ControleurItem;
 use undefined\controllers\ControleurUtilisateur;
 use undefined\controllers\AfficheReservationControllers;
+use undefined\controllers\ControllerUser;
 
 session_start();
 
@@ -27,13 +28,10 @@ $app->get('/', function(){
 $app->get('/categorie/:id', function($id){
     $c = new ControleurItem();
     $c->afficherItemsCategorie($id);
-<<<<<<< HEAD
 });
 
 $app->get('/ListeItemsCat', function(){
 
-=======
->>>>>>> 60d08ea55dbcecc4b426723885043deaff4dc356
 })->name('ListeItemsCat');
 
 $app->get('/ListeReserv', function(){
@@ -53,30 +51,28 @@ $app->get('/Item', function() {
 	$ic->affichageItem();
 })->name('Item');
 
-<<<<<<< HEAD
 $app->get('/utilisateurs',function(){
 	$cu=new ControleurUtilisateur();
 	$cu->afficherListeUtilisateurs();
 });
 
 $app->run();
-=======
 
 // CONNEXION
 $app->get('/auth/login', function(){
-	// formulaire connexion
+	(new ControllerUser())->afficherConnexionForm();
 })->name('connect');
 
 $app->post('/auth/login', function(){
-	// formulaire connexion traitement
+	(new ControllerUser())->traiterConnexionForm();
 })->name('connect_valid');
 
 $app->get('/auth/register', function(){
-	// formulaire inscription
+	(new ControllerUser())->afficherInscriptionForm();
 })->name('register');
 
 $app->post('/auth/register', function(){
-	// formulaire inscription traitement
+	(new ControllerUser())->traiterInscriptionForm();
 })->name('register_valid');
 
 $app->get('/AfficheReservation', function(){
@@ -97,5 +93,8 @@ $app->post('auth/profile', function(){
 	// formulaire validation edition
 })->name('profile_valid');
 
+
+$app->get('/auth/logout', function(){
+		(new ControllerUser())->deconnexion();
+});
 $app->run();
->>>>>>> 60d08ea55dbcecc4b426723885043deaff4dc356
