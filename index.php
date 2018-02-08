@@ -6,6 +6,7 @@ use undefined\controllers\AccueilController;
 use undefined\controllers\FormulaireReservationController;
 use undefined\controllers\ItemController;
 use undefined\controllers\ControleurItem;
+use undefined\controllers\ControleurPlanning;
 use undefined\controllers\ControleurUtilisateur;
 use undefined\controllers\AfficheReservationControllers;
 use undefined\controllers\ControllerUser;

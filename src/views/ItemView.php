@@ -14,21 +14,21 @@ class ItemView {
  		$this->item = $it;
 	}
 
-	public function render_id() {		
+	public function render_id() {
 		$html = '<div class="item_id">';
 		$html = $html.$this->item->id." : ";
 		$html = $html.'</div>';
 		return $html;
 	}
 
-	public function render_nom() {		
+	public function render_nom() {
 		$html = '<div class="item_titre">';
 		$html = $html.$this->item->nom."<br />";
 		$html = $html.'</div>';
 		return $html;
 	}
 
-	public function render_desc() {		
+	public function render_desc() {
 		$html = '<div class="item_desc">';
 		$html = $html.$this->item->description." : ";
 		$html = $html.'</div>';
@@ -68,7 +68,7 @@ class ItemView {
             </div></div>
 END;
 		$url = $app->urlFor('ListeReserv');
-        $url2 = $app->urlFor('PlanningGraph');
+        $url2 = $app->urlFor('PlanningGraph',['id'=>$this->item->id]);
         $url3 = $app->urlFor('FormRes');
 		$it = $it.<<<END
 		<div id="linkBox"><a href="$url" title="Afficher la liste des réservations de cet item"><div class="lienPub" id="esc">Afficher la liste des réservations de cet item</div></a>
