@@ -32,7 +32,8 @@ class ControleurPlanning {
         }
       }
       $vP = new VuePlanning($this->affichagePlanning($tab));
-      $vP->render();
+      echo GlobaleView::header([]).$vP->render().GlobaleView::footer();
+
   }
   
   function afficherPlanningUtilisateur($id){
@@ -81,12 +82,12 @@ class ControleurPlanning {
     $reserve = $tab;
     $res = '<table id="resa"><tr><th></th>';
     foreach ($jours as $k => $v) {
-      $res .= "<th>".$v."</th>";
+      $res .= "<th class=\"day\">".$v."</th>";
     }
     $res .= "</tr>";
     $res .= "<tr>";
     foreach ($heures as $k => $v) {
-      $res .= "<td>".$heures[$k]."</td>";
+      $res .= "<th class=\"hour\">".$heures[$k]."</th>";
       foreach ($jours as $key => $value) {
         $res .= "<td class=\"".(($reserve[$key][$k] == 'Vacant') ? 'dispo' : 'indispo')."\">".$reserve[$key][$k]."</td>";
       }

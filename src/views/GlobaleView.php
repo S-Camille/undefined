@@ -24,6 +24,7 @@ class GlobaleView {
 		<link rel="stylesheet" href="$rootUI/web/css/header_footer.css" />
 		<link rel="stylesheet" href="$rootUI/web/css/all.css" />
 		<link rel="stylesheet" href="$rootUI/web/css/formu.css" />
+		<link rel="stylesheet" href="$rootUI/web/css/planning.css" />
 END;
 		foreach ($tabcss as $css) {
 			$html = $html.'<link rel="stylesheet" href="'.$rootUI.'/web/css/'.$css.'" />';

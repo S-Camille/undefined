@@ -29,6 +29,7 @@ END;
                 <input type="submit" value="Modifier" />
                 </form>
 END;
+
 		$it = $it.GlobaleView::footer();
 		return $it;
 	}

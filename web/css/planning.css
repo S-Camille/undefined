@@ -1,10 +1,13 @@
 #resa td {
     border: 1px solid black;
     font-weight: bold;
+    padding: 15px 25px;
+    text-align: center;
 }
 
 #resa {
     border-collapse: collapse;
+    margin: auto;
 }
 
 #resa tr td:first-child {
@@ -13,4 +16,30 @@
 
 #resa tr td:last-child {
     text-align: right;
+}
+
+#resa th.day {
+	border-right: 1px solid black;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+#resa th.day:last-child {
+	border-right-width: 0px;
+}
+
+#resa th.hour {
+	padding-right: 15px;
+	border-bottom: 1px solid black;
+	padding-left: 15px;
+}
+#resa th.hour:last-child {
+	border-bottom-width: 0px;
+}
+
+#resa .dispo {
+	background-color: lightgrey;
+}
+
+#resa .indispo {
+	background-color: darkgrey;
 }
